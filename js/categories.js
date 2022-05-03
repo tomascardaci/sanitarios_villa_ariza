@@ -33,9 +33,6 @@ oReq.onload = function(e) {
     $('.categories_conteiner').append(`
         <div class="categories_conteiner_item shadow">
             <div class="categories_conteiner_item-img">
-                <div class="categories_conteiner_item-effect">
-                    <span>CONOCER MÁS</span>
-                </div>
                 <img src="${datos[i].img}"> 
             </div>
             <div class="categories_conteiner_item-name">

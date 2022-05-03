@@ -29,9 +29,6 @@ oReq.onload = function(e) {
     $('.categories_conteiner').append(`
         <div class="categories_conteiner_item shadow-lg">
             <div class="categories_conteiner_item-img">
-                <div class="categories_conteiner_item-effect">
-                    <span>CONOCER MÁS</span>
-                </div>
                 <img src="${datos[i].img}" alt="bomba_de_agua"> 
             </div>
             <div class="categories_conteiner_item-name">
