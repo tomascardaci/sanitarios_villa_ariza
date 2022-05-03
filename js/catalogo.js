@@ -39,7 +39,7 @@ oReq.onload = function(e) {
     <a href="product.html"><div class="product_conteiner_item">
 
       <div class="product_conteiner_item-img shadow">
-        <img src="PRODUCTOS/griferias/img/${datos[i].img1}">
+        <img src="${datos[i].img1}">
       </div>
 
       <div class="product_conteiner_item-description">

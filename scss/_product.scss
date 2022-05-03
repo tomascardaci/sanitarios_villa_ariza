@@ -11,6 +11,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 
     .productDescription{
         display: flex;
@@ -19,9 +20,18 @@
         padding-top: 25px;
     }
 
+    .productNameImgConteiner{
+        border: 1px solid fuchsia;
+    }
+
     .productNameImg{
         align-self: center;
-        width: 100%;
+        max-width: 600px;
+    }
+
+    .carousel-control-negro{
+        height: 60px;
+        background-color: rgba(97, 97, 97, 0.164);
     }
 
     h2{
@@ -148,6 +158,10 @@
 
 
     .productInformation_principal{
+
+        .productNameImg{
+            max-width: 400px;
+        }
         
         img{
             width: 80%;
@@ -220,12 +234,12 @@
         display: flex;
         margin-bottom: 50px;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         
         .productNameImg{
             display: flex;
             flex-direction: column;
-            width: 65%;
+            max-width: 600px;
         }
 
         display: flex;
