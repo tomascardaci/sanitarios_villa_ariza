@@ -1,0 +1,63 @@
+
+.header_conteiner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+ .header_conteiner-banner{
+    
+    max-width: 100%;
+    max-height: 250px;
+    
+}
+
+// /*---------------------mediaqueries-------------------------*/
+
+// /* ------------------phones---------------------- */
+// @media only screen and (max-width: 479.9px) {
+
+//     .header_conteiner-banner{
+//         height: 100px;
+//     }
+
+    
+// }
+
+// /* -----------------tablets---------------------- */
+// @media only screen and (min-width: 479.9px) {
+
+
+//     .header_conteiner-banner{
+//         height: 120px;
+//     }
+
+    
+// }
+
+// /* ---------------tablets-md--------------------- */
+// @media only screen and (min-width: 767.9px) {
+      
+
+//     .header_conteiner-banner{
+//         height: 150px;
+//     }
+
+
+// }
+
+// /* ---------------notebooks---------------------- */
+// @media only screen and (min-width: 959.9px) {
+
+//     .header_conteiner-banner{
+//         height: 190px;
+//     }
+// }
+
+// @media only screen and (min-width: 1025px){
+//     .header_conteiner-banner{
+//         height: 220px;
+//     }
+// }

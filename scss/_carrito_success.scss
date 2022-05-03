@@ -1,0 +1,185 @@
+
+.carritoSuccess_banner{
+    background-color: #416B79;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.carritoSuccess_banner-logo{
+    background-color: white;
+    height: 70%;
+
+    img{
+        height: 100%;
+    }
+}
+
+.carritoSuccess_conteiner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 150px;
+
+}
+
+.carritoSuccess_body{
+    background-color: white;
+
+    height: 240px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.carritoSuccess_body-banner{
+    width: 100%;
+    height: 50px;
+    background-color: #416B79;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;   
+    align-items: center;
+}
+
+.carritoSuccess_title{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;   
+}
+
+.carritoSuccess_body-message{
+    height: 120px;
+    text-align: center;
+
+    span{
+        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bold;
+        font-size: 13px;
+    }
+}
+
+.carritoSuccess_body-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;   
+    align-items: center;
+    margin-bottom: 20px;
+
+    button{
+        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bold;
+        color: white;
+        background-color: #01A3BA;
+        height: 35px;
+        width: 100px;
+        border: none;
+    }
+
+    button:hover{
+        border: 1px solid gray;
+        color: #416B79;
+    }
+
+}
+
+@media only screen and (min-width: 477.9px){
+    .carritoSuccess_banner{
+        padding-left: 40px;
+        height: 80px;
+    }
+
+    .carritoSuccess_body{
+        width: 65%;
+    }
+
+    .carritoSuccess_body-message{
+        padding: 20px;
+
+        span{
+            font-size: 17px;
+        }
+    }
+}
+
+@media only screen and (min-width: 959.9px){
+    .carritoSuccess_banner{
+        height: 100px;
+    }
+
+    .carritoSuccess_body-banner{
+        height: 60px;
+    }
+
+    .carritoSuccess_title{
+        font-size: 20px;
+    }
+
+    .carritoSuccess_body{
+        width: 55%;
+        height: 300px;
+    }
+
+    .carritoSuccess_body-message{
+        padding: 30px;
+        height: 170px;
+
+        span{
+            font-size: 20px;
+        }
+    }
+
+    .carritoSuccess_body-footer{
+
+        button{
+            font-size: 20px;
+            height: 50px;
+            width: 150px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px){
+    .carritoSuccess_banner{
+        height: 150px;
+    }
+
+    .carritoSuccess_body-banner{
+        height: 80px;
+    }
+
+    .carritoSuccess_title{
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .carritoSuccess_body{
+        width: 40%;
+        height: 350px;
+    }
+
+    .carritoSuccess_body-message{
+        padding: 50px;
+        height: 170px;
+
+        span{
+            font-size: 24px;
+        }
+    }
+
+    .carritoSuccess_body-footer{
+
+        button{
+            font-size: 24px;
+            height: 60px;
+            width: 170px;
+        }
+    }
+}

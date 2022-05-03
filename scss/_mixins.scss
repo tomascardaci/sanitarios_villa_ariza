@@ -1,0 +1,5 @@
+//---------------mixins------------------//
+@mixin tamaño($height, $width){
+    height: $height;
+    width: $width;
+}

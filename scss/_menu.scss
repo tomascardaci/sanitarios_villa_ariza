@@ -1,0 +1,132 @@
+
+
+.menu_conteiner{
+    @include tamaño(85px, 100%);
+    background-color: #416B79;
+
+}
+
+.menu_conteiner_list{
+    @include tamaño (100%, 100%);
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding-right: 10px;
+}
+
+.menu_conteiner_list-item{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    :hover{
+        color: #2d4b55;
+    }
+}
+
+.menu_conteiner_list-link{
+    color: white; 
+    text-decoration: none;
+    font-size: 22px;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    
+   // border: 1px solid black;//     
+}
+
+.menu_conteiner_list-cart{
+    height: 32px;
+    margin-right: 35px;
+
+}
+
+.menu_conteiner_list-cartCounter{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    background-color: #2d4b55;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+/* ------------------phones---------------------- */
+@media only screen and (max-width: 479.9px) {
+
+    .menu_conteiner_list-link{
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .menu_conteiner_list-cart{
+        height: 15px;
+        margin-right: 10px;
+    }
+
+    .menu_conteiner_list-cartCounter{
+        height: 13px;
+        width: 13px;
+        margin-left: 20px;
+        font-size: 9px;
+    }
+
+    .menu_conteiner_list{
+        padding: 5px;
+    }
+}
+
+/* -----------------tablets---------------------- */
+@media only screen and (min-width: 479.9px) {
+
+    .menu_conteiner_list{
+        padding: 5px;
+    }
+
+
+    .menu_conteiner_list-cartCounter{
+        margin-left: 30px;
+    }
+
+    .menu_conteiner_list-link{
+        font-size: 13px;
+    }
+    
+    .menu_conteiner_list-cart{
+        height: 20px;
+        margin-right: 10px;
+    }
+}
+
+/* ---------------notebooks---------------------- */
+@media only screen and (min-width: 959.9px) {
+
+    .menu_conteiner_list-link{
+        font-size: 15px;
+    }
+    
+}
+
+/* ----------------desktop----------------------) */
+@media only screen and (min-width: 1024px) {
+
+    .menu_conteiner_list-link{
+        font-size: 20px;
+    }
+
+    .menu_conteiner_list-cart{
+        height: 25px;
+        margin-right: 10px;
+    }
+
+    .menu_conteiner_list-cartCounter{
+        margin-left: 35px;
+    }
+}

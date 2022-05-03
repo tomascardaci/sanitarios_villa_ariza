@@ -1,0 +1,254 @@
+.nosotros_conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.nosotros_conteiner-primary{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    
+}
+
+.nosotros_conteiner-secondary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #F3F3F3;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.section_title{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #01A3BA;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    letter-spacing: 0.8px;
+}
+
+.section_line{
+    width: 70%;
+    height: 2px;
+    background-color: #01A3BA;
+    margin-bottom: 15px;
+}
+
+.section_text{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    color: #416B79;
+
+    li{
+        margin-top: 10px;
+        color: #416B79;
+        
+    }
+    
+}
+
+.section_map{
+    width: 280px;
+    height: 260px;
+    margin-top: 10px;
+}
+
+.section_ubication{
+    width: 315px;  
+    margin-top: 15px; 
+}
+
+.section_img{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+
+    img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+.section_contact{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    align-items: center;
+    padding-bottom: 20px;
+
+    span{
+        margin-top: 10px;
+        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.7px;
+        color: #416B79;
+    }
+}
+
+@media only screen and (min-width: 767.9px){
+    .nosotros_conteiner-primary{
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 20px;
+    }
+
+    .nosotros_conteiner-secondary{
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 20px;
+    }
+
+
+    .section_title{
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+
+    .section_line{
+        height: 4px;
+        margin-bottom: 20px;
+    }
+
+    .section_text{
+        width: 75%;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .section_map{
+        width: 420px;
+        height: 400px;
+    }
+
+    .section_ubication{
+        width: 480px;
+    }
+
+    .section_img{
+        width: 45%;
+
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .section_contact{
+        span{
+            font-size: 18px;
+        }
+    }
+}
+
+@media only screen and (min-width: 959.9px){
+
+
+    .section_title{
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+
+    .section_line{
+        height: 6px;
+        margin-bottom: 30px;
+    }
+
+    .section_text{
+        width: 70%;
+        font-size: 22px;
+    }
+
+    .section_map{
+        width: 520px;
+        height: 500px;
+    }
+
+    .section_ubication{
+        width: 550px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .section_img{
+        width: 45%;
+
+        img{
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    .section_contact{
+        span{
+            font-size: 20px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px){
+
+    .section_title{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .section_line{
+        width: 52%;
+        height: 6px;
+        margin-bottom: 30px;
+    }
+
+    .section_text{
+        width: 52%;
+        font-size: 25px;
+        line-height: 2;
+    }
+
+    .section_map{
+        margin-top: 30px;
+        width: 620px;
+        height: 600px;
+    }
+
+    .section_ubication{
+        width: 650px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .section_img{
+        width: 35%;
+
+        img{
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    .section_contact{
+        span{
+            font-size: 25px;
+            margin-top: 20px;
+        }
+    }
+}
+
+
+

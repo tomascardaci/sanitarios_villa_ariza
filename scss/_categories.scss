@@ -1,0 +1,31 @@
+.categories_conteiner{
+    border: 1px solid red;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.categories_conteiner_item{
+    width: 70%;
+    margin-bottom: 40px;
+}
+
+.categories_conteiner_item-img{
+    width: 100%;
+
+    img{
+        width: 100%;
+    }
+}
+
+.categories_conteiner_item-name{
+    text-align: center;
+    padding: 10px;
+
+    span{
+        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 20px;
+        color: #416B79;
+        font-weight: bold;
+        let
