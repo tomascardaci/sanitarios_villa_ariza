@@ -1,6 +1,8 @@
 let getExcelUrl = sessionStorage.getItem('excelUrl');
 let catalogoHojaExcel = sessionStorage.getItem('hojaExcel');
-let catalogName = sessionStorage.getItem('catalogName')
+let catalogName = sessionStorage.getItem('catalogName');
+let categoryExcel = sessionStorage.getItem('categoryExcel');
+let productID = sessionStorage.getItem('productID')
 
 /* set up XMLHttpRequest */
 var url = getExcelUrl;
@@ -28,28 +30,33 @@ oReq.onload = function(e) {
   var datos = XLSX.utils.sheet_to_json(worksheet,{raw:true})
   console.log(datos)
 
+  
+
 
   $('.banner_conteiner_text').html(catalogName.toUpperCase());
   
 
   for (let i = 0; i < datos.length; i++) {
-    
-    $('.product_conteiner').append(`
 
-    <a href="product.html"><div class="product_conteiner_item">
-
+    if(categoryExcel === "3"){
+      $('.product_conteiner').append(`
+      <a href="product.html"><div class="product_conteiner_item">
       <div class="product_conteiner_item-img shadow">
         <img src="${datos[i].img1}">
       </div>
+      <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${[datos[i].name],[datos[i].brand],[datos[i].model],[datos[i].line],[datos[i].tipo]}</span></div>
+    </div></a>`);
+    }else{
 
-      <div class="product_conteiner_item-description">
-        <span class="product_conteiner_item-text">${datos[i].name}</span>
+      $('.product_conteiner').append(`
+      <a href="product.html"><div class="product_conteiner_item">
+      <div class="product_conteiner_item-img shadow">
+        <img src="${datos[i].img1}">
       </div>
-
-    </div></a>
-
-    `);
-  }
+      <div class="product_conteiner_item-description">${datos[i].name}</div>
+    </div></a>`);
+    }
+  };
 
   const productSelector = document.querySelectorAll('div.product_conteiner_item');
 

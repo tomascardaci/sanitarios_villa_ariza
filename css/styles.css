@@ -694,6 +694,8 @@ body {
     font-size: 26px; } }
 
 .carrito_conteiner {
+  border: 1px solid red;
+  width: 100%;
   padding-top: 25px; }
 
 .carrito_conteiner_list {
