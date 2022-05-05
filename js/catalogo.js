@@ -38,22 +38,12 @@ oReq.onload = function(e) {
 
   for (let i = 0; i < datos.length; i++) {
 
-    if(categoryExcel === "3"){
       $('.product_conteiner').append(`
       <a href="product.html"><div class="product_conteiner_item">
       <div class="product_conteiner_item-img shadow">
         <img src="${datos[i].img1}">
       </div>
-      <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${[datos[i].name],[datos[i].brand],[datos[i].model],[datos[i].line],[datos[i].tipo]}</span></div>
-    </div></a>`);
-    }else{
-
-      $('.product_conteiner').append(`
-      <a href="product.html"><div class="product_conteiner_item">
-      <div class="product_conteiner_item-img shadow">
-        <img src="${datos[i].img1}">
-      </div>
-      <div class="product_conteiner_item-description">${datos[i].name}</div>
+      <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name}</span></div>
     </div></a>`);
     }
   };
@@ -69,7 +59,7 @@ oReq.onload = function(e) {
     
   }))
 
-}
+
 
 
 
