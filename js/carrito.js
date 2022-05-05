@@ -111,7 +111,7 @@ $('#cartConfirmation').click(function() {
               Host : "smtp.elasticemail.com",
               Username : "rodo.toms@gmail.com",
               Password : "CE7FB8D3C8517DB74A184E8A7FE0C742783E",
-              To : 'tomascardaci88@gmail.com',
+              To : 'ariza@resistemas.com.ar',
               From : `rodo.toms@gmail.com`,
               Subject : `Lista de precios ${formName}`,
               Body : `<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
