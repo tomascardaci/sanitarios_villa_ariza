@@ -14,11 +14,9 @@ $('#sendContactMail').click(function() {
          
 
           Email.send({
-              Host : "smtp.elasticemail.com",
-              Username : "rodo.toms@gmail.com",
-              Password : "CE7FB8D3C8517DB74A184E8A7FE0C742783E",
+              SecureToken : "9905b567-2b07-40f7-b966-9f964ab03d3d",
               To : 'tomascardaci88@gmail.com',
-              From : `rodo.toms@gmail.com`,
+              From : `sanitariosvillaariza.bot@gmail.com`,
               Subject : `${formName} / ${formSubject}`,
               Body : `<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
               <div style="width: 50%; margin:40px; ">
@@ -45,9 +43,10 @@ $('#sendContactMail').click(function() {
                   </div>
               </div>
           </div>`
-          });         
+          }).then(
+            message => alert(message)
+          );         
         
-        
-        location.href="carrito_success.html"  
+         
     };
 })

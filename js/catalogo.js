@@ -2,7 +2,6 @@ let getExcelUrl = sessionStorage.getItem('excelUrl');
 let catalogoHojaExcel = sessionStorage.getItem('hojaExcel');
 let catalogName = sessionStorage.getItem('catalogName');
 let categoryExcel = sessionStorage.getItem('categoryExcel');
-let productID = sessionStorage.getItem('productID')
 
 /* set up XMLHttpRequest */
 var url = getExcelUrl;
@@ -28,36 +27,50 @@ oReq.onload = function(e) {
   var worksheet = workbook.Sheets[first_sheet_name];
 
   var datos = XLSX.utils.sheet_to_json(worksheet,{raw:true})
-  console.log(datos)
 
-  
+  $(document).ready(function(){
+
+    $('.banner_conteiner_text').html(catalogName.toUpperCase());
+
+    for (let i = 0; i < datos.length; i++) {
+
+        $('.product_conteiner').append(`
+          <div class="product_conteiner_item">
+            <div class="product_conteiner_item-img shadow">
+              <img src="${datos[i].img1}">
+            </div>
+          <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name}</span></div>
+        </div>`);
+    };
+
+    let getProductsIndex = document.querySelectorAll("div.product_conteiner_item");
+    getProductsIndex.forEach((div,index) => div.addEventListener('click', ()=> {
+
+      let catalogoProductID = index;
+
+      sessionStorage.setItem('hojaExcel', catalogoHojaExcel);
+      sessionStorage.setItem('productID', catalogoProductID);
+
+      location.href="product.html" 
 
 
-  $('.banner_conteiner_text').html(catalogName.toUpperCase());
-  
+    }));
 
-  for (let i = 0; i < datos.length; i++) {
-
-      $('.product_conteiner').append(`
-      <a href="product.html"><div class="product_conteiner_item">
-      <div class="product_conteiner_item-img shadow">
-        <img src="${datos[i].img1}">
-      </div>
-      <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name}</span></div>
-    </div></a>`);
-    }
-  };
-
-  const productSelector = document.querySelectorAll('div.product_conteiner_item');
-
-  productSelector.forEach((div,index) => div.addEventListener('click', ()=> {
-
-    var catalogoProductID = index;
-
-    sessionStorage.setItem('hojaExcel', catalogoHojaExcel);
-    sessionStorage.setItem('productID', catalogoProductID);
     
-  }))
+  });
+
+   
+
+
+ 
+  
+
+  
+};
+
+ 
+
+  
 
 
 

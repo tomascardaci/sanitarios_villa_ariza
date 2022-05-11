@@ -41,25 +41,14 @@ oReq.onload = function(e) {
   var worksheet = workbook.Sheets[first_sheet_name];
 
   var datos = XLSX.utils.sheet_to_json(worksheet,{raw:true})  
+  console.log(datos[productID])
 
   let getProductKeys = Object.keys(datos[productID]);
+  console.log(getProductKeys)
   
   getProductKeys.forEach(element => checkEmptyElement(element));
   console.log(datos[productID])
 
-  // function checkElement(element){
-  //   if (datos[productID][element] != "undefined" && datos[productID][element] != "null"){
-  //     if(element === "img1"){
-  //       $('#carousel_img1').append(`<img src="${datos[productID][element]}" class="d-block w-100" alt="${datos[productID].name}">`);
-  //     }else if(element === "img2"){
-  //       $('#carousel_img2').append(`<img src="${datos[productID][element]}" class="d-block w-100" alt="${datos[productID].name}">`)
-  //       }else if(element === "name"){
-  //         $('#carousel_img2').append(`<img src="${datos[productID][element]}" class="d-block w-100" alt="${datos[productID].name}">`)
-  //         }else if(element === "brand"){
-  //           $('.productInformation_specifications').append(`<tr><td class="productInformation_specifications-left">Marca</td><td class="productInformation_specifications-right">${datos[productID][element]}</td></tr>`)
-  //           }
-  //   }
-  // };
 
   function checkEmptyElement(element){
 

@@ -109,10 +109,10 @@ $('#cartConfirmation').click(function() {
 
           Email.send({
               Host : "smtp.elasticemail.com",
-              Username : "rodo.toms@gmail.com",
-              Password : "CE7FB8D3C8517DB74A184E8A7FE0C742783E",
-              To : 'ariza@resistemas.com.ar',
-              From : `rodo.toms@gmail.com`,
+              Username : "sanitariosvillaariza.bot@gmail.com",
+              Password : "5658C2FF017EE3D028323A25F230B820380E",
+              To : 'rodo.toms@gmail.com',
+              From : `sanitariosvillaariza.bot@gmail.com`,
               Subject : `Lista de precios ${formName}`,
               Body : `<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
               <div style="width: 50%; margin:40px; ">
