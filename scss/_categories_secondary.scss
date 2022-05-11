@@ -1,5 +1,4 @@
-.product_conteiner{ 
-    border: 1px solid red;
+.product_conteiner{
     display: flex;
     flex-direction: column; 
     align-items: center;
@@ -35,10 +34,10 @@
 
 @media only screen and (min-width: 767.9px){
     .product_conteiner{
-        border: 1px solid fuchsia;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        align-content: flex-start;
         padding: 60px 0px;
     }
 
@@ -58,7 +57,6 @@
 
 @media only screen and (min-width: 1024px){
     .product_conteiner{
-        border: 1px solid rgb(0, 174, 255);
         padding: 120px 60px;
         
     }
@@ -81,22 +79,21 @@
 
 @media only screen and (min-width: 1279px){
     .product_conteiner{
-        border: 1px solid rgb(17, 0, 255);
         padding: 120px 60px;
         
     }
 
     .product_conteiner_item-img{
-        width: 360px;
+        width: 300px;
     }
 
     .product_conteiner_item-description{
-        width: 360px;
+        width: 300px;
         margin-bottom: 60px;
     }
 
     .product_conteiner_item-text{
-        font-size: 25px;
+        font-size: 20px;
     }
 
     
