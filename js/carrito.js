@@ -60,15 +60,8 @@ $(document).ready(function() {
             
     }
 
-    
-});
-
-
-
-
-
-const productDiv = document.querySelectorAll('.carrito_conteiner_product');
-productDiv.forEach((quantityInput) => {
+    const productDiv = document.querySelectorAll('.carrito_conteiner_product');
+    productDiv.forEach((quantityInput) => {
     quantityInput.addEventListener('change', quantityChanged);
 });
 
@@ -80,6 +73,7 @@ function quantityChanged(event) {
 
 
 const cartDeleteButtons = document.querySelectorAll('#deleteItem');
+console.log(cartDeleteButtons)
 cartDeleteButtons.forEach((deleteItemButton) => {
     deleteItemButton.addEventListener('click', deleteItemClicked);
 });
@@ -147,6 +141,15 @@ $('#cartConfirmation').click(function() {
         location.href="carrito_success.html"  
     };
 });
+
+    
+});
+
+
+
+
+
+
 
 
    
