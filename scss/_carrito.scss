@@ -1,5 +1,4 @@
 .carrito_conteiner{
-    border: 1px solid red;
     width: 100%;
     padding-top: 25px;
 
@@ -7,7 +6,6 @@
 }
 
 .carrito_conteiner_list{
-    border: 1px solid green;
     width: 100%;
     background-color: #e2e2e2;
     display: flex;
@@ -25,28 +23,25 @@
 }
 
 .carrito_conteiner_product{
- border: 1px solid #416B79;
+    border: 1px solid rgba(207, 207, 207, 0.87);
     width: 100%;
     height: 100px;
     background-color: white;
     margin-top: 5px;
-    border-bottom: 1px solid rgba(207, 207, 207, 0.87);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
 
     img{
-        height: 60px;
-        width: 60px;
-        // border: 1px solid orangered;
+        max-height: 80px;
     }
 
     span{
+        width: 150px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-left: 10px;
         font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
         color: #416B79;
         font-size: 11px;
@@ -70,7 +65,7 @@
     }
 
     .productQuantityInput{
-        width: 38px;
+        width: 20px;
     }
 
 
@@ -166,25 +161,31 @@
 @media only screen and (min-width: 477.9px){
 
     .carrito_conteiner_list-text{
-        height: 55px;
-
-        p{
-            font-size: 16px;
-        }
+        height: 65px;
     }
 
     .carrito_conteiner_product{
-        height: 90px;
+        height: 110px;
 
         img{
-            height: 80px;
-            width: 78px;
+            max-height: 100px;
         };
 
         span{
             font-size: 16px;
-            width: 320px
+            width: 240px
         };
+
+        #deleteItem{
+            height: 30px;
+            width: 30px;
+            padding-top: 2px;
+    
+        }
+    
+        .productQuantityInput{
+            width: 40px;
+        }
     };
 
 
@@ -220,36 +221,39 @@
 @media only screen and (min-width: 959.9px){
 
     .carrito_conteiner{
-        width: 85%;
-        align-self: center;
+        padding: 60px 10%;
     }
 }
 
 @media only screen and (min-width: 1025px){
     .carrito_conteiner_list-text{
         height: 75px;
-
-        p{
-            font-size: 20px;
-        }
-
-        .producto{
-            width: 69%;
-        }
     }
 
     .carrito_conteiner_product{
-        height: 110px;
+        height: 140px;
 
         img{
-            height: 100px;
-            width: 98px;
+            max-height: 130px;
         };
 
         span{
             font-size: 19px;
-            width: 350px
+            width: 400px
         };
+
+        #deleteItem{
+            height: 35px;
+            width: 35px;
+            padding-top: 4px;
+    
+        }
+    
+        .productQuantityInput{
+            width: 50px;
+        }
+
+        
     };
 
     .carrito_conteiner_userContact{
