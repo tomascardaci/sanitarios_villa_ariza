@@ -334,25 +334,9 @@ oReq.onload = function(e) {
   
 
  
-};
+  };
 
-  
-
-
-  
-
-  
-
-
-
-
-
-
-
-};
-
-
-$('#addToCartBtn').click(function() {
+  $('#addToCartBtn').click(function() {
 
     $('.menu_conteiner_list-cartCounter').css("background-color","red");
       if (sessionStorage.getItem('arrayCarrito') == null){
@@ -374,7 +358,25 @@ $('#addToCartBtn').click(function() {
             sessionStorage.setItem('cartCount',getCartCount);    
 
         } 
-});  
+}); 
+
+  
+
+
+  
+
+  
+
+
+
+
+
+
+
+};
+
+
+ 
 
 
 

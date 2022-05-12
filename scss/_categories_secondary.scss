@@ -37,7 +37,6 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        align-content: flex-start;
         padding: 60px 0px;
     }
 
@@ -84,16 +83,16 @@
     }
 
     .product_conteiner_item-img{
-        width: 300px;
+        width: 260px;
     }
 
     .product_conteiner_item-description{
-        width: 300px;
+        width: 260px;
         margin-bottom: 60px;
     }
 
     .product_conteiner_item-text{
-        font-size: 20px;
+        font-size: 18px;
     }
 
     
