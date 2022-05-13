@@ -6,7 +6,6 @@ let categoryExcel = sessionStorage.getItem('categoryExcel')
 
 
 
-let arrayCarrito = [];
 
 $(document).ready(function() {
     let setCartCount = sessionStorage.getItem('cartCount');
@@ -318,6 +317,10 @@ oReq.onload = function(e) {
           break;
           
           case "normas":
+          $('.productInformation_detalles').append(`<h4 class="productInformation_section-secondary">Normas:</h4><p class=" productInformation_text">${datos[productID][element]}</p>`);
+          break;
+          
+          case "garantía":
           $('.productInformation_detalles').append(`<h4 class="productInformation_section-secondary">Garantía:</h4><p class=" productInformation_text">${datos[productID][element]}</p>`);
           break; 
 

@@ -27,6 +27,7 @@ oReq.onload = function(e) {
   var worksheet = workbook.Sheets[first_sheet_name];
 
   var datos = XLSX.utils.sheet_to_json(worksheet,{raw:true})
+  console.log(datos)
 
   $(document).ready(function(){
 

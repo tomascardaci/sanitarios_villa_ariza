@@ -577,7 +577,8 @@ body {
 
 .productInformation_section-secondary {
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin-top: 10px;
+  text-decoration: underline;
+  margin-top: 50px;
   font-size: 21px;
   letter-spacing: 1.2px;
   font-weight: bold;

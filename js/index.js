@@ -48,6 +48,8 @@ oReq.onload = function(e) {
     const categorySelectorName = Array.from(document.querySelectorAll('.catalogName'));
     sessionStorage.setItem('categoryName', categorySelectorName[index].innerHTML);
 
+    console.log(categorySelectorName)
+
    
     function getExcel (index){
         switch (index) {
@@ -67,9 +69,6 @@ oReq.onload = function(e) {
                 return "PRODUCTOS\\excel\\loza_datos.xlsx";
                 break;
             case 5:
-                return "PRODUCTOS\\excel\\vanitorys_datos.xlsx";
-                break;
-            case 6:
                 return "PRODUCTOS\\excel\\sistemas_datos.xlsx";
                 break;           
         }
