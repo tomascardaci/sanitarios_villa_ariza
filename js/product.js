@@ -55,6 +55,7 @@ oReq.onload = function(e) {
       checkElement(element)
 
       function checkElement (element,categoryExcel){
+
         switch (element) {
 
           case "id":

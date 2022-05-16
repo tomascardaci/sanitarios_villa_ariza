@@ -33,7 +33,94 @@ oReq.onload = function(e) {
 
     $('.banner_conteiner_text').html(catalogName.toUpperCase());
 
-    for (let i = 0; i < datos.length; i++) {
+    if(categoryExcel == 3){
+      if(catalogoHojaExcel == 4){
+        for (let i = 0; i < datos.length; i++) {
+
+          $('.product_conteiner').append(`
+            <div class="product_conteiner_item">
+              <div class="product_conteiner_item-img shadow">
+                <img src="PRODUCTOS/griferias/img/${datos[i].img1}">
+              </div>
+            <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].brand + " " + datos[i].color + " " + datos[i].sku}</span></div>
+          </div>`);
+        };
+      }else if(catalogoHojaExcel == 6){
+        for (let i = 0; i < datos.length; i++) {
+
+          $('.product_conteiner').append(`
+            <div class="product_conteiner_item">
+              <div class="product_conteiner_item-img shadow">
+              <img src="PRODUCTOS/griferias/img/${datos[i].img1}">
+              </div>
+            <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].category2 + " " + datos[i].sku}</span></div>
+          </div>`);
+        };
+      }else if(catalogoHojaExcel == 7){
+        for (let i = 0; i < datos.length; i++) {
+
+          $('.product_conteiner').append(`
+            <div class="product_conteiner_item">
+              <div class="product_conteiner_item-img shadow">
+              <img src="PRODUCTOS/griferias/img/${datos[i].img1}">
+              </div>
+            <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].brand + " " + datos[i].sku}</span></div>
+          </div>`);
+        };
+      }else if(catalogoHojaExcel == 8){
+        for (let i = 0; i < datos.length; i++) {
+
+          $('.product_conteiner').append(`
+            <div class="product_conteiner_item">
+              <div class="product_conteiner_item-img shadow">
+              <img src="PRODUCTOS/griferias/img/${datos[i].img1}">
+              </div>
+            <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].brand + " " + datos[i].category2 + " " + datos[i].sku}</span></div>
+          </div>`);
+        };
+      }else if(catalogoHojaExcel == 9){
+        for (let i = 0; i < datos.length; i++) {
+
+          $('.product_conteiner').append(`
+            <div class="product_conteiner_item">
+              <div class="product_conteiner_item-img shadow">
+              <img src="PRODUCTOS/griferias/img/${datos[i].img1}">
+              </div>
+            <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].brand + " " + datos[i].line + " " + datos[i].color + " " + datos[i].sku}</span></div>
+          </div>`);
+        };
+      }else if(catalogoHojaExcel == 10){
+        for (let i = 0; i < datos.length; i++) {
+
+          $('.product_conteiner').append(`
+            <div class="product_conteiner_item">
+              <div class="product_conteiner_item-img shadow">
+              <img src="PRODUCTOS/griferias/img/${datos[i].img1}">
+              </div>
+            <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].brand + " " + datos[i].aplication + " " + datos[i].color + " " + datos[i].sku}</span></div>
+          </div>`);
+        };
+      }else{
+        for (let i = 0; i < datos.length; i++) {
+
+          $('.product_conteiner').append(`
+            <div class="product_conteiner_item">
+              <div class="product_conteiner_item-img shadow">
+              <img src="PRODUCTOS/griferias/img/${datos[i].img1}">
+              </div>
+            <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].brand + " " + datos[i].line + " " + datos[i].category3 + " " + datos[i].color + " " + datos[i].sku}</span></div>
+          </div>`);
+        };
+      }
+
+
+
+
+
+
+    }else {
+
+      for (let i = 0; i < datos.length; i++) {
 
         $('.product_conteiner').append(`
           <div class="product_conteiner_item">
@@ -43,6 +130,10 @@ oReq.onload = function(e) {
           <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name}</span></div>
         </div>`);
     };
+    };
+    
+
+    
 
     let getProductsIndex = document.querySelectorAll("div.product_conteiner_item");
     getProductsIndex.forEach((div,index) => div.addEventListener('click', ()=> {
