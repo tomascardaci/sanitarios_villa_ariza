@@ -113,13 +113,19 @@ oReq.onload = function(e) {
         };
       }
 
+    }else if(categoryExcel == 4){
 
+      for (let i = 0; i < datos.length; i++) {
 
-
-
-
-    }else {
-
+        $('.product_conteiner').append(`
+          <div class="product_conteiner_item">
+            <div class="product_conteiner_item-img shadow">
+              <img src="${datos[i].img1}">
+            </div>
+          <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].brand + " " + datos[i].line + " " + datos[i].model}</span></div>
+        </div>`);
+      };
+    } else{
       for (let i = 0; i < datos.length; i++) {
 
         $('.product_conteiner').append(`
@@ -129,7 +135,7 @@ oReq.onload = function(e) {
             </div>
           <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name}</span></div>
         </div>`);
-    };
+      };
     };
     
 
@@ -139,16 +145,18 @@ oReq.onload = function(e) {
     getProductsIndex.forEach((div,index) => div.addEventListener('click', ()=> {
 
       let catalogoProductID = index;
-
+      let catalogoProductName = getProductsIndex[index].querySelector(".product_conteiner_item-text").innerHTML;
+      
       sessionStorage.setItem('hojaExcel', catalogoHojaExcel);
       sessionStorage.setItem('productID', catalogoProductID);
+      sessionStorage.setItem('productSelectedName', catalogoProductName);
 
-      location.href="product.html" 
-
+      if(categoryExcel != 5){
+        location.href="product.html"
+      };
 
     }));
-
-    
+   
   });
 
    

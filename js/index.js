@@ -66,7 +66,7 @@ oReq.onload = function(e) {
                 return "PRODUCTOS\\excel\\griferias_datos.xlsx";
                 break;
             case 4:
-                return "PRODUCTOS\\excel\\loza_datos.xlsx";
+                return "PRODUCTOS\\excel\\baños_datos.xlsx";
                 break;
             case 5:
                 return "PRODUCTOS\\excel\\sistemas_datos.xlsx";

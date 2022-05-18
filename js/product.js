@@ -1,8 +1,9 @@
 
-let getExcelUrl = sessionStorage.getItem('excelUrl')
+let getExcelUrl = sessionStorage.getItem('excelUrl');
 let hojaExcel = sessionStorage.getItem('hojaExcel');
 let productID = sessionStorage.getItem('productID');
-let categoryExcel = sessionStorage.getItem('categoryExcel')
+let categoryExcel = sessionStorage.getItem('categoryExcel');
+let getSelectedProductName = sessionStorage.getItem('productSelectedName');
 
 
 
@@ -40,19 +41,14 @@ oReq.onload = function(e) {
   var worksheet = workbook.Sheets[first_sheet_name];
 
   var datos = XLSX.utils.sheet_to_json(worksheet,{raw:true})  
-  console.log(datos[productID])
-
-  let getProductKeys = Object.keys(datos[productID]);
-  console.log(getProductKeys)
-  
+  let getProductKeys = Object.keys(datos[productID]); 
   getProductKeys.forEach(element => checkEmptyElement(element));
-  console.log(datos[productID])
-
 
   function checkEmptyElement(element){
-
+    let categoryExcel = sessionStorage.getItem('categoryExcel');
+    
     if(datos[productID][element] != "undefined" && datos[productID][element] != "null" && datos[productID][element] != "-"){
-      checkElement(element)
+      checkElement(element,categoryExcel)
 
       function checkElement (element,categoryExcel){
 
@@ -61,12 +57,8 @@ oReq.onload = function(e) {
           case "id":
           break;
             
-          case "name":
-            if(categoryExcel === 3){
-              $('.productInformationNameDescrption').append(`<h2>${datos[productID].name, datos[productID].brand, datos[productID].model, datos[productID].line, datos[productID].tipo }</h2>`);
-            }else{
-              $('.productInformationNameDescrption').append(`<h2>${datos[productID][element]}</h2>`);
-            };
+          case "name":            
+          $('.productInformationNameDescrption').append(`<h2>${getSelectedProductName}</h2>`);
           break;
 
           case "description":
@@ -74,15 +66,27 @@ oReq.onload = function(e) {
           break;
 
           case "img1":
-          $('.carousel-inner').append(`<div class="carousel-item active"><img src="${datos[productID][element]}" class="d-block w-100" alt="${datos[productID].name}"></div>`);
+            if(categoryExcel == 3){
+              $('.carousel-inner').append(`<div class="carousel-item active"><img src="PRODUCTOS/griferias/img/${datos[productID].img1}" class="d-block w-100" alt="${datos[productID].name}"></div>`);
+            }else{
+              $('.carousel-inner').append(`<div class="carousel-item active"><img src="${datos[productID][element]}" class="d-block w-100" alt="${datos[productID].name}"></div>`);
+              }; 
           break;
 
           case "img2":
-          $('.carousel-inner').append(`<div class="carousel-item"><img src="${datos[productID][element]}" class="d-block w-100" alt="${datos[productID].name}"></div>`);
+            if(categoryExcel == 3){
+              $('.carousel-inner').append(`<div class="carousel-item"><img src="PRODUCTOS/griferias/img/${datos[productID].img2}" class="d-block w-100" alt="${datos[productID].name}"></div>`);
+            }else{
+              $('.carousel-inner').append(`<div class="carousel-item"><img src="${datos[productID][element]}" class="d-block w-100" alt="${datos[productID].name}"></div>`);
+              }; 
           break;
 
           case "img3":
-          $('.carousel-inner').append(`<div class="carousel-item"><img src="${datos[productID][element]}" class="d-block w-100" alt="${datos[productID].name}"></div>`);
+            if(categoryExcel == 3){
+              $('.carousel-inner').append(`<div class="carousel-item"><img src="PRODUCTOS/griferias/img/${datos[productID].img3}" class="d-block w-100" alt="${datos[productID].name}"></div>`);
+            }else{
+              $('.carousel-inner').append(`<div class="carousel-item"><img src="${datos[productID][element]}" class="d-block w-100" alt="${datos[productID].name}"></div>`);
+              }; 
           break;
 
           case "brand":

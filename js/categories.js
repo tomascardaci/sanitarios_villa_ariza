@@ -49,6 +49,8 @@ oReq.onload = function(e) {
   
       sessionStorage.setItem('hojaExcel', index)
       sessionStorage.setItem('catalogName', productSelectorName[index].innerHTML)
+
+      let categoryExcel = sessionStorage.getItem('categoryExcel');
   
       location.href="catalogo.html"  
       
