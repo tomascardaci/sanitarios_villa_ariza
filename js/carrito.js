@@ -1,6 +1,8 @@
 
 
-var arrayCarrito = JSON.parse(sessionStorage.getItem('arrayCarrito'));
+let arrayCarrito = JSON.parse(sessionStorage.getItem('arrayCarrito'));
+let getSelectedProductName = sessionStorage.getItem('productSelectedName');
+
 
 $(document).ready(function() {
     let setCartCount = sessionStorage.getItem('cartCount');
@@ -30,32 +32,7 @@ $(document).ready(function() {
                     <div id="deleteItem">X</div>
                 </div>`
             );
-        } else{
-            function addquantity(){
-                for (let a = 0; a < elementsTitle.length; a++) {
-                    if(elementsTitle[a].innerText === arrayCarrito[i].name){
-                        let elementQuantity = elementsTitle[a].parentElement.querySelector('.productQuantityInput');
-                        elementQuantity.value++
-                        return;   
-                    } else{
-                        $('.carrito_conteiner_list').append(`
-                            <div class="carrito_conteiner_product shadow-sm">
-                                <img src="${arrayCarrito[i].img1}">
-                                <span id="productName" class="getProductName">${arrayCarrito[i].name}</span>
-                                <div class="productQuantity">
-                                    <input class="productQuantityInput" type="number" value="1">
-                                </div>
-                                <div id="deleteItem">X</div>
-                            </div>`);
-                        
-                        return;
-                    }
-                }
-            }
-            addquantity()
-
-            
-        }   
+        };   
 
             
     }
@@ -63,12 +40,14 @@ $(document).ready(function() {
     const productDiv = document.querySelectorAll('.carrito_conteiner_product');
     productDiv.forEach((quantityInput) => {
     quantityInput.addEventListener('change', quantityChanged);
+
+    function quantityChanged(event) {
+        const input = event.target;
+        input.value <= 0 ? (input.value = 1) : null;   
+    };
 });
 
-function quantityChanged(event) {
-   const input = event.target;
-   input.value <= 0 ? (input.value = 1) : null;   
-}
+
 
 
 

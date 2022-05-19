@@ -114,17 +114,33 @@ oReq.onload = function(e) {
       }
 
     }else if(categoryExcel == 4){
+      if(catalogoHojaExcel == 3){
+        for (let i = 0; i < datos.length; i++) {
 
-      for (let i = 0; i < datos.length; i++) {
+          $('.product_conteiner').append(`
+            <div class="product_conteiner_item">
+              <div class="product_conteiner_item-img shadow">
+                <img src="${datos[i].img1}">
+              </div>
+            <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].brand + " " + datos[i].line}</span></div>
+          </div>`);
+        };
 
-        $('.product_conteiner').append(`
-          <div class="product_conteiner_item">
-            <div class="product_conteiner_item-img shadow">
-              <img src="${datos[i].img1}">
-            </div>
-          <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].brand + " " + datos[i].line + " " + datos[i].model}</span></div>
-        </div>`);
+      }else{
+        for (let i = 0; i < datos.length; i++) {
+
+          $('.product_conteiner').append(`
+            <div class="product_conteiner_item">
+              <div class="product_conteiner_item-img shadow">
+                <img src="${datos[i].img1}">
+              </div>
+            <div class="product_conteiner_item-description"><span class="product_conteiner_item-text">${datos[i].name + " " + datos[i].brand + " " + datos[i].line + " " + datos[i].model}</span></div>
+          </div>`);
+        };
+        
       };
+
+      
     } else{
       for (let i = 0; i < datos.length; i++) {
 

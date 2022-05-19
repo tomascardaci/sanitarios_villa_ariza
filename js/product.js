@@ -4,6 +4,7 @@ let hojaExcel = sessionStorage.getItem('hojaExcel');
 let productID = sessionStorage.getItem('productID');
 let categoryExcel = sessionStorage.getItem('categoryExcel');
 let getSelectedProductName = sessionStorage.getItem('productSelectedName');
+let arrayCarrito = [];
 
 
 
