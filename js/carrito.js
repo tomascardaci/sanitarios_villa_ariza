@@ -1,7 +1,6 @@
 
 
 let arrayCarrito = JSON.parse(sessionStorage.getItem('arrayCarrito'));
-let getSelectedProductName = sessionStorage.getItem('productSelectedName');
 
 
 $(document).ready(function() {
@@ -13,37 +12,43 @@ $(document).ready(function() {
     }
 });
 
+
 $(document).ready(function() {
 
-
+    // recorrer el array de productos en el carrito
     for (let i = 0; i < arrayCarrito.length; i++){
-
-        let elementsTitle = document.getElementsByClassName('getProductName');
-
-        if(elementsTitle.length === 0){
-            $('.carrito_conteiner_list').append(`
+        $('.carrito_conteiner_list').append(`
         
                 <div class="carrito_conteiner_product shadow-sm">
-                    <img src="${arrayCarrito[i].img1}">
-                    <span id="productName" class="getProductName">${arrayCarrito[i].name}</span>
-                    <div class="productQuantity">
-                        <input class="productQuantityInput" type="number" value="1">
-                    </div>
-                    <div id="deleteItem">X</div>
-                </div>`
-            );
-        };   
+                 <img src="${arrayCarrito[i].img}">
+                <span id="productName" class="getProductName">${arrayCarrito[i].name}</span>
+                <div class="productQuantity">
+                    <input class="productQuantityInput" type="number" value=${arrayCarrito[i].count} name="${arrayCarrito[i].name}">
+                 </div>
+                <div id="deleteItem">X</div>
+                </div>`);
 
-            
-    }
+       
+    };
+
+    
 
     const productDiv = document.querySelectorAll('.carrito_conteiner_product');
     productDiv.forEach((quantityInput) => {
     quantityInput.addEventListener('change', quantityChanged);
 
+    function updateSessionStorage(productName, newCount) {
+        var getCarritoStorage = sessionStorage.getItem('arrayCarrito');
+        var carritoStorageParse = JSON.parse(getCarritoStorage);
+        const oldProduct = carritoStorageParse.find(product => product.name === productName);
+        carritoStorageParse[carritoStorageParse.indexOf(oldProduct)] = {...oldProduct, count: newCount };
+        sessionStorage.setItem('arrayCarrito', JSON.stringify(carritoStorageParse));
+    }
+
     function quantityChanged(event) {
         const input = event.target;
-        input.value <= 0 ? (input.value = 1) : null;   
+        input.value <= 0 ? (input.value = 1) : null; 
+        updateSessionStorage(input.name, input.value);
     };
 });
 
@@ -52,7 +57,6 @@ $(document).ready(function() {
 
 
 const cartDeleteButtons = document.querySelectorAll('#deleteItem');
-console.log(cartDeleteButtons)
 cartDeleteButtons.forEach((deleteItemButton) => {
     deleteItemButton.addEventListener('click', deleteItemClicked);
 });

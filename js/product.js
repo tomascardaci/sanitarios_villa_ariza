@@ -346,10 +346,14 @@ oReq.onload = function(e) {
   };
 
   $('#addToCartBtn').click(function() {
+    let name = sessionStorage.getItem('productSelectedName');
+    let img = datos[productID].img1;
+    const productObject = {name: name, img: img, count: 1};
+    console.log(productObject)
 
     $('.menu_conteiner_list-cartCounter').css("background-color","red");
       if (sessionStorage.getItem('arrayCarrito') == null){
-          arrayCarrito.push(datos[productID]);
+          arrayCarrito.push(productObject);
           sessionStorage.setItem('arrayCarrito', JSON.stringify(arrayCarrito));
           cartCount = 1
           sessionStorage.setItem('cartCount',(cartCount));
@@ -358,7 +362,13 @@ oReq.onload = function(e) {
         } else{
             var getCarritoStorage = sessionStorage.getItem('arrayCarrito');
             var carritoStorageParse = JSON.parse(getCarritoStorage);
-            carritoStorageParse.push(datos[productID]);
+            if (carritoStorageParse.some(product => product.name === productObject.name))
+            {
+              const oldProduct = carritoStorageParse.find(product => product.name === productObject.name);
+              carritoStorageParse[carritoStorageParse.indexOf(oldProduct)] = {...productObject, count: oldProduct.count + 1 };
+            } else {
+              carritoStorageParse.push(productObject);
+            }
             sessionStorage.setItem('arrayCarrito', JSON.stringify(carritoStorageParse));
             let getCartCountJSON = sessionStorage.getItem('cartCount');
             let getCartCount = JSON.parse(getCartCountJSON) ;
