@@ -104,7 +104,7 @@ $('#cartConfirmation').click(function() {
                 Host : "smtp.elasticemail.com",
                 Username : "comprasvillaariza@gmail.com",
                 Password : "00CFE5103EACCD78CF840035D459D964A092",
-                To : 'rodo.toms@gmail.com',
+                To : 'tomascardaci88@gmail.com',
                 From : "comprasvillaariza@gmail.com",
                 Subject : `Lista de precios ${formName}`,
                 Body : `<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">

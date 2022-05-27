@@ -18,7 +18,7 @@ $('#sendContactMail').click(function() {
             Host : "smtp.elasticemail.com",
             Username : "comprasvillaariza@gmail.com",
             Password : "00CFE5103EACCD78CF840035D459D964A092",
-            To : 'sanitariosvillaariza@gmail.com',
+            To : 'tomascardaci88@gmail.com',
             From : "comprasvillaariza@gmail.com",
             Subject : `${formSubject}`,
             Body : `<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">

@@ -349,7 +349,6 @@ oReq.onload = function(e) {
     let name = sessionStorage.getItem('productSelectedName');
     let img = datos[productID].img1;
     const productObject = {name: name, img: img, count: 1};
-    console.log(productObject)
 
     $('.menu_conteiner_list-cartCounter').css("background-color","red");
       if (sessionStorage.getItem('arrayCarrito') == null){
@@ -377,6 +376,8 @@ oReq.onload = function(e) {
             sessionStorage.setItem('cartCount',getCartCount);    
 
         } 
+
+        location.href="carrito.html" 
 }); 
 
   
