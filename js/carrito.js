@@ -43,12 +43,28 @@ $(document).ready(function() {
         const oldProduct = carritoStorageParse.find(product => product.name === productName);
         carritoStorageParse[carritoStorageParse.indexOf(oldProduct)] = {...oldProduct, count: newCount };
         sessionStorage.setItem('arrayCarrito', JSON.stringify(carritoStorageParse));
+
+        let cartCount = 0;
+
+        for (let e = 0; e < carritoStorageParse.length; e++) {
+            cartCount += parseInt(carritoStorageParse[e].count);    
+        }
+
+        
+        $('.menu_conteiner_list-cartCounter').html(cartCount);
+        sessionStorage.setItem('cartCount', cartCount);
+
+
+
     }
+
 
     function quantityChanged(event) {
         const input = event.target;
         input.value <= 0 ? (input.value = 1) : null; 
         updateSessionStorage(input.name, input.value);
+
+
     };
 });
 
@@ -84,31 +100,28 @@ $('#cartConfirmation').click(function() {
          var cartConfirmedItems = Array.from(document.querySelectorAll('.carrito_conteiner_product'));
          
 
-          Email.send({
-              Host : "smtp.elasticemail.com",
-              Username : "sanitariosvillaariza.bot@gmail.com",
-              Password : "5658C2FF017EE3D028323A25F230B820380E",
-              To : 'rodo.toms@gmail.com',
-              From : `sanitariosvillaariza.bot@gmail.com`,
-              Subject : `Lista de precios ${formName}`,
-              Body : `<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-              <div style="width: 50%; margin:40px; ">
-                  <div style="width: 100%; margin-bottom: 30px; display: flex; flex-direction: column; align-items: center;">
-                      <img height="120px" src="https://lh3.googleusercontent.com/k06NSKUphZmhplcDH1-KdH_Bdpq7R2sLEFwsS8uda6hRRuV4AdJT8Q1_3nVcVkI6L8Y5ykbpLLZThMLeizwY0T0txYYnceAKwVYt_pz8XadZrxv4Tuhr4eVNoqvLwZ1y8G5OQZ9I2XNTrR81wLuv0rZO3ooZ9_aPv84Tbv4m1LrFLbkVIUN1VgiJhxSajimdnWsCYgcVGJjgA0zPd-vqdVHRjyctPlCMXBBp7rYVA4ZMS9VprV8intu5M3ow5K2t0Bm2i8OuVGxfEcyZ1ISmhPeCNPQ1URZA1ox5hBbt8OnQLKSC-SP0x_RHsQ8R3Tb8nA0_Kooxp2W4eNz19DMfc6Dy122FjCBy0rD9F-EeUwOMr_qAfg10RCaK6RX_BIku20eA2AojvDOq6EtqiIOSzead4_TUMjwRPzyrAR9j1eXsS7lOMfeJjX-6m4ORfcvKIasK1nnfXfTubDe-lOzOu7uhUnvIqzueK5kqyHxyeAaRdveH6gcBD-zjlCLPusCp1y-k_Gfx3AKPxFBXWUPiJ60txxXJ2SU1oIcVWNBEBtKmAvYBkQvHQ4IHDlmne0bmnmtBzHVpkqjurCDKFxLlL6QS3laCQpwnqVBF-7_zecjRn4EhBGjZkCGhs6T1g5k1Iz98GgbSOhBAo6MfzYSmy9PZlLA1fNAD3sWE-gfR9VxpQztgHHTT_fKdEucxJjzWfKYTPWZ9BghbhTOFjvq4254kgyWMTWm3LupNNYBEjGhVyjF7YEoAREfaP1JNvuEioZt45ik0KdZ1mZ2Ga813rlq1mpVx_f288PDT5JMBkDBVGmsjG1TgQQmIyHVYNDCZ2vGG=w900-h300-no?authuser=2">
-                  </div>
-                  <div style="width: 100%; border: 1px solid gray; margin-bottom: 30px;">
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "comprasvillaariza@gmail.com",
+                Password : "00CFE5103EACCD78CF840035D459D964A092",
+                To : 'rodo.toms@gmail.com',
+                From : "comprasvillaariza@gmail.com",
+                Subject : `Lista de precios ${formName}`,
+                Body : `<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 50%; margin:40px; ">
+                  <div style="width: 100%; border: 1px solid gray; margin-bottom: 30px; overflow: auto;">
                       <div style="height: 40px; padding-left: 20px; padding-top: 3px;background-color: #01A3BA; color: white; font-weight: bold; letter-spacing: 1px; font-size: 20px; ">Nombre del cliente</div>
                       <div style="height: 60px; padding-left: 20px; padding-top: 12px; font-size: 20px;">${formName}</div>
                   </div>
-                  <div style="width: 100%; border: 1px solid gray; margin-bottom: 30px;">
+                  <div style="width: 100%; border: 1px solid gray; margin-bottom: 30px; overflow: auto;">
                       <div style="height: 40px; padding-left: 20px; padding-top: 3px;background-color: #01A3BA; color: white; font-weight: bold; letter-spacing: 1px; font-size: 20px; ">Número de teléfono</div>
                       <div style="height: 60px; padding-left: 20px; padding-top: 12px; font-size: 20px;">${formPhone}</div>
                   </div>
-                  <div style="width: 100%; border: 1px solid gray; margin-bottom: 30px;">
+                  <div style="width: 100%; border: 1px solid gray; margin-bottom: 30px; overflow: auto;">
                       <div style="height: 40px; padding-left: 20px; padding-top: 3px;background-color: #01A3BA; color: white; font-weight: bold; letter-spacing: 1px; font-size: 20px; ">Correo electrónico</div>
                       <div style="min-height: 60px; padding-left: 20px; padding-top: 12px; font-size: 20px;">${formEmail}</div>
                   </div>
-                  <div style="width: 100%; border: 1px solid gray; margin-bottom: 30px;">
+                  <div style="width: 100%; border: 1px solid gray; margin-bottom: 30px; overflow: auto;">
                       <div style="height: 40px; padding-left: 20px; padding-top: 3px;background-color: #01A3BA; color: white; font-weight: bold; letter-spacing: 1px; font-size: 20px; ">Lista de productos</div>
                       <div style="min-height: 60px; padding-left: 20px; padding-top: 12px; font-size: 20px;">
                           <ul id="emailItemsList">
@@ -116,9 +129,9 @@ $('#cartConfirmation').click(function() {
                           </ul>
                       </div>
                   </div>
-              </div>
-          </div>`
-          });         
+                </div>
+                </div>`
+            });         
         
         
         location.href="carrito_success.html"  

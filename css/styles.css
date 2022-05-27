@@ -213,9 +213,6 @@ body {
   height: 60vh;
   box-shadow: 0 8px 10px -2px gray;
   padding: 0; }
-  .carrousel_conteiner img {
-    height: 100%;
-    width: 100%; }
 
 .banner_conteiner {
   display: flex;
@@ -249,8 +246,8 @@ body {
   .banner_conteiner {
     height: 105px; }
   .banner_conteiner_text {
-    font-size: 25px;
-    letter-spacing: 5px; }
+    font-size: 20px;
+    letter-spacing: 2px; }
   .banner_conteiner_line {
     height: 5px; }
   .carrousel_conteiner {
@@ -441,6 +438,19 @@ body {
     margin-bottom: 50px; }
   .ubication_conteiner_address {
     width: 40%; } }
+
+.catalogo_sistemas_titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px, 0px;
+  margin-top: 60px; }
+  .catalogo_sistemas_titulo span {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #416B79;
+    font-size: 25px;
+    letter-spacing: 1px;
+    margin-bottom: 10px; }
 
 .product_conteiner {
   display: flex;

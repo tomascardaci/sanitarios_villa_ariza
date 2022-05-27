@@ -31,6 +31,11 @@ oReq.onload = function(e) {
 
   $(document).ready(function(){
 
+    if(categoryExcel == 5){
+      $('.catalogo_sistemas').append(`<div class="catalogo_sistemas_titulo"><span>¡Comunicate con nosotros para más información!</span></div>`);
+    }
+
+
     $('.banner_conteiner_text').html(catalogName.toUpperCase());
 
     if(categoryExcel == 3){
@@ -114,6 +119,7 @@ oReq.onload = function(e) {
       }
 
     }else if(categoryExcel == 4){
+
       if(catalogoHojaExcel == 3){
         for (let i = 0; i < datos.length; i++) {
 

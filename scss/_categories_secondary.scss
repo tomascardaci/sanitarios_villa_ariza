@@ -1,3 +1,19 @@
+.catalogo_sistemas_titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px, 0px;
+    margin-top: 60px;
+
+    span{
+        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #416B79;
+        font-size: 25px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+}
+
 .product_conteiner{
     display: flex;
     flex-direction: column; 
@@ -39,6 +55,7 @@
         justify-content: space-evenly;
         padding: 60px 0px;
     }
+
 
     .product_conteiner_item-img{
         width: 280px;

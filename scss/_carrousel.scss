@@ -3,10 +3,6 @@
     height: 60vh;
     box-shadow: 0 8px 10px -2px gray;
     padding: 0;
-
-    img{
-        @include tamaño(100%,100%)
-    }
 }
 
 .banner_conteiner{
@@ -50,8 +46,8 @@
     }
 
     .banner_conteiner_text{
-        font-size: 25px;
-        letter-spacing: 5px;
+        font-size: 20px;
+        letter-spacing: 2px;
     }
 
     .banner_conteiner_line{
