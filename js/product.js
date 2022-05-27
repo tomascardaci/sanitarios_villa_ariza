@@ -348,7 +348,8 @@ oReq.onload = function(e) {
   $('#addToCartBtn').click(function() {
     let name = sessionStorage.getItem('productSelectedName');
     let img = datos[productID].img1;
-    const productObject = {name: name, img: img, count: 1};
+    let category = categoryExcel;
+    const productObject = {name: name, img: img, category: category ,count: 1};
 
     $('.menu_conteiner_list-cartCounter').css("background-color","red");
       if (sessionStorage.getItem('arrayCarrito') == null){

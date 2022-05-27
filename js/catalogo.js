@@ -32,7 +32,7 @@ oReq.onload = function(e) {
   $(document).ready(function(){
 
     if(categoryExcel == 5){
-      $('.catalogo_sistemas').append(`<div class="catalogo_sistemas_titulo"><span>¡Comunicate con nosotros para más información!</span></div>`);
+      $('.catalogo_sistemas').append(`<div class="catalogo_sistemas_titulo"><span>¡Comuníquese con nosotros para más información!</span></div>`);
     }
 
 

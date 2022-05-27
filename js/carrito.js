@@ -5,19 +5,49 @@ let arrayCarrito = JSON.parse(sessionStorage.getItem('arrayCarrito'));
 
 $(document).ready(function() {
     let setCartCount = sessionStorage.getItem('cartCount');
+
     if (sessionStorage.getItem('cartCount') == null){
         $('.menu_conteiner_list-cartCounter').html(0);
     } else{
         $('.menu_conteiner_list-cartCounter').html(setCartCount);
     }
+
+    if (setCartCount <= 0){
+
+        $('.menu_conteiner_list-cartCounter').css("background-color","#2d4b55");
+
+        setCartCount = 0;
+
+        sessionStorage.removeItem('arrayCarrito');
+        sessionStorage.setItem('cartCount', 0);
+     
+    };
+
 });
 
 
 $(document).ready(function() {
 
+
     // recorrer el array de productos en el carrito
     for (let i = 0; i < arrayCarrito.length; i++){
-        $('.carrito_conteiner_list').append(`
+
+        if(arrayCarrito[i].category == 3){
+
+            $('.carrito_conteiner_list').append(`
+        
+                <div class="carrito_conteiner_product shadow-sm">
+                 <img src="PRODUCTOS/griferias/img/${arrayCarrito[i].img}">
+                <span id="productName" class="getProductName">${arrayCarrito[i].name}</span>
+                <div class="productQuantity">
+                    <input class="productQuantityInput" type="number" value=${arrayCarrito[i].count} name="${arrayCarrito[i].name}">
+                 </div>
+                <div class="deleteItemSelected" id="deleteItem">X</div>
+                </div>`);
+
+        }else {
+
+            $('.carrito_conteiner_list').append(`
         
                 <div class="carrito_conteiner_product shadow-sm">
                  <img src="${arrayCarrito[i].img}">
@@ -25,9 +55,10 @@ $(document).ready(function() {
                 <div class="productQuantity">
                     <input class="productQuantityInput" type="number" value=${arrayCarrito[i].count} name="${arrayCarrito[i].name}">
                  </div>
-                <div id="deleteItem">X</div>
+                <div class="deleteItemSelected" id="deleteItem">X</div>
                 </div>`);
 
+        };     
        
     };
 
@@ -47,7 +78,8 @@ $(document).ready(function() {
         let cartCount = 0;
 
         for (let e = 0; e < carritoStorageParse.length; e++) {
-            cartCount += parseInt(carritoStorageParse[e].count);    
+            cartCount += parseInt(carritoStorageParse[e].count);
+
         }
 
         
@@ -56,12 +88,14 @@ $(document).ready(function() {
 
 
 
+
     }
 
 
     function quantityChanged(event) {
         const input = event.target;
-        input.value <= 0 ? (input.value = 1) : null; 
+        input.value <= 0 ? (input.value = 1) : null;
+        input.value >= 30 ? (input.value = 30) : null; 
         updateSessionStorage(input.name, input.value);
 
 
@@ -78,13 +112,53 @@ cartDeleteButtons.forEach((deleteItemButton) => {
 });
 
 function deleteItemClicked(event) {
+
     const button = event.target;
     button.closest('.carrito_conteiner_product').remove();
-    var deleteCartCount = sessionStorage.getItem('cartCount');
+
+    let deleteCartCount = sessionStorage.getItem('cartCount');
     deleteCartCount--;
     $('.menu_conteiner_list-cartCounter').html(deleteCartCount);
     sessionStorage.setItem('cartCount', deleteCartCount);
-}
+
+    
+
+    
+    
+    
+};
+
+const deleteButtons = document.querySelectorAll('.deleteItemSelected');
+deleteButtons.forEach((div,index) => div.addEventListener('click', ()=> {
+
+    let deleteCartItem = JSON.parse(sessionStorage.getItem('arrayCarrito'));
+
+    let arrayCarritoUpdate = deleteCartItem.splice(index, 1);
+
+    sessionStorage.setItem('arrayCarrito', JSON.stringify(arrayCarritoUpdate));
+
+    let getCartCount = sessionStorage.getItem('cartCount');
+
+    if(getCartCount <= 0){
+
+        getCartCount = 0;
+
+        sessionStorage.removeItem('arrayCarrito');
+     
+        $('.menu_conteiner_list-cartCounter').css("background-color","#2d4b55");
+        
+
+    }
+
+}));
+
+
+
+
+
+
+
+
 
 $('#cartConfirmation').click(function() {
     
@@ -104,7 +178,7 @@ $('#cartConfirmation').click(function() {
                 Host : "smtp.elasticemail.com",
                 Username : "comprasvillaariza@gmail.com",
                 Password : "00CFE5103EACCD78CF840035D459D964A092",
-                To : 'tomascardaci88@gmail.com',
+                To : 'sanitariosvillaariza@gmail.com',
                 From : "comprasvillaariza@gmail.com",
                 Subject : `Lista de precios ${formName}`,
                 Body : `<div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
